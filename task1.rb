@@ -12,5 +12,30 @@ class DegConverter
         @scale1 = scale1
         @scale2 = scale2
     end
+
+    def convert()
+        case @scale1
+        when 'C'
+            convertC()
+        when 'F'
+            convertF()
+        when 'K'
+            convertK()
+        else
+            "Unknown scale #{@scale1}"
+        end
+    end
+
+    def convertC()
+        case @scale2
+        when 'K'
+            @deg + 273.15
+        when 'F'
+            @deg * 1.8 + 32
+        else
+            "Unknown scale #{@scale2}"
+        end
+    end
 end
+
 
