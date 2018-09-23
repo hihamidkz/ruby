@@ -36,6 +36,17 @@ class DegConverter
             "Unknown scale #{@scale2}"
         end
     end
+
+    def convertF()
+        case @scale2
+        when 'C'
+            (@deg - 32) * 5.0 / 9.0
+        when 'K'
+            (@deg - 32) * 5.0 / 9.0 + 273.15
+        else
+            "Unknown scale #{@scale2}"
+        end
+    end
 end
 
 
